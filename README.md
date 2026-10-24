@@ -8,7 +8,7 @@ Deep learning for plant phenotyping: counting and detecting leaves in top-down i
 
 | Task | Best model | Metric | Score |
 |---|---|---|---|
-| Leaf counting (regression) | AlexNet + data augmentation | Pearson r | 0.76 |
+| Leaf counting | AlexNet + data augmentation | Pearson r | 0.76 |
 | Leaf detection | ResNet34 / VGG16 (frozen weights) + data augmentation | Average Precision | 0.38 |
 
 **Key findings**
