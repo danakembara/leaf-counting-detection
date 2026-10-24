@@ -3,6 +3,50 @@
   <img src="https://github.com/user-attachments/assets/dc47b632-9e38-41ce-941c-2f0d9f36f82a" alt="image" width="650"/>
 </p>
 
+# Leaf Counting and Detection
+
+Deep learning for plant phenotyping: counting and detecting leaves in top-down images of *Arabidopsis* plants using CNNs in PyTorch.
+
+> Group project for [course name], Wageningen University & Research.
+> My contributions: [e.g. data augmentation pipeline, detection experiments, model evaluation]
+
+## Results
+
+| Task | Best model | Metric | Score |
+|---|---|---|---|
+| Leaf counting (regression) | AlexNet + data augmentation | Pearson r | 0.76 |
+| Leaf detection | ResNet34 / VGG16 (frozen weights) + data augmentation | Average Precision | 0.38 |
+
+**Key findings**
+- Data augmentation improved performance on a small dataset (~150 training images).
+- A simpler model (AlexNet) outperformed fine-tuned ResNets for leaf counting.
+- Tuning the non-maximum suppression threshold mattered for overlapping leaves.
+
+## Quick Start
+
+```bash
+git clone https://github.com/danakembara/leaf-counting-detection.git
+cd leaf-counting-detection
+pip install -r requirements.txt
+
+python task_1_leaf_counting.py    # leaf counting
+python task_2_leaf_detection.py   # leaf detection
+```
+
+**Data:** Download the *Ara2012* and *Ara2013-Canon* sets from the CVPPP Leaf Counting / Leaf Segmentation Challenge and place them in `data/`.
+
+## Repository Structure
+
+```
+├── task_1_leaf_counting.py    # CNN regression for leaf counting
+├── task_2_leaf_detection.py   # CNN object detection for leaves
+└── README.md
+```
+
+---
+
+## Full Report
+
 ## Introduction
 Plant phenotype refers to the set of observable characteristics resulting from interactions between gene expression and the environment. Accurate and efficient monitoring of plant phenotypes is essential for intelligent production in plant cultivation, leading to better decision-making and higher yields. Traditional plant monitoring relies on manual measurements to analyze phenotypes, which are labor-intensive, time-consuming, and subject to observer bias. A better approach is to use image-based plant phenotyping with deep learning, allowing remote observation and reducing the effects of manual interference. Convolutional neural network (CNN)-based methods have been commonly applied to plant phenotyping, with related works such as [1] which used CNN for leaf counting, and [2][3] which used CNN for leaf detection.
 
